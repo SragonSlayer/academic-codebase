@@ -1,0 +1,144 @@
+('Module(\n'
+ '    body=[\n'
+ '        Import(\n'
+ '            names=[\n'
+ "                alias(name='random')]),\n"
+ '        ClassDef(\n'
+ "            name='Car',\n"
+ '            bases=[],\n'
+ '            keywords=[],\n'
+ '            body=[\n'
+ '                FunctionDef(\n'
+ "                    name='__init__',\n"
+ '                    args=arguments(\n'
+ '                        posonlyargs=[],\n'
+ '                        args=[\n'
+ "                            arg(arg='self'),\n"
+ "                            arg(arg='EngineType'),\n"
+ "                            arg(arg='CarColor')],\n"
+ '                        kwonlyargs=[],\n'
+ '                        kw_defaults=[],\n'
+ '                        defaults=[]),\n'
+ '                    body=[\n'
+ '                        Assign(\n'
+ '                            targets=[\n'
+ '                                Attribute(\n'
+ "                                    value=Name(id='self', ctx=Load()),\n"
+ "                                    attr='EngineType',\n"
+ '                                    ctx=Store())],\n'
+ "                            value=Name(id='EngineType', ctx=Load())),\n"
+ '                        Assign(\n'
+ '                            targets=[\n'
+ '                                Attribute(\n'
+ "                                    value=Name(id='self', ctx=Load()),\n"
+ "                                    attr='CarColor',\n"
+ '                                    ctx=Store())],\n'
+ "                            value=Name(id='CarColor', ctx=Load()))],\n"
+ '                    decorator_list=[],\n'
+ '                    type_params=[]),\n'
+ '                FunctionDef(\n'
+ "                    name='render',\n"
+ '                    args=arguments(\n'
+ '                        posonlyargs=[],\n'
+ '                        args=[\n'
+ "                            arg(arg='self')],\n"
+ '                        kwonlyargs=[],\n'
+ '                        kw_defaults=[],\n'
+ '                        defaults=[]),\n'
+ '                    body=[\n'
+ '                        Pass()],\n'
+ '                    decorator_list=[],\n'
+ '                    type_params=[])],\n'
+ '            decorator_list=[],\n'
+ '            type_params=[]),\n'
+ '        Assign(\n'
+ '            targets=[\n'
+ "                Name(id='num_Cars', ctx=Store())],\n"
+ '            value=Call(\n'
+ '                func=Attribute(\n'
+ "                    value=Name(id='random', ctx=Load()),\n"
+ "                    attr='randint',\n"
+ '                    ctx=Load()),\n'
+ '                args=[\n'
+ '                    Constant(value=11),\n'
+ '                    Constant(value=19)],\n'
+ '                keywords=[])),\n'
+ '        Assign(\n'
+ '            targets=[\n'
+ "                Name(id='MyCars', ctx=Store())],\n"
+ '            value=List(elts=[], ctx=Load())),\n'
+ '        For(\n'
+ "            target=Name(id='car', ctx=Store()),\n"
+ '            iter=Call(\n'
+ "                func=Name(id='range', ctx=Load()),\n"
+ '                args=[\n'
+ "                    Name(id='num_Cars', ctx=Load())],\n"
+ '                keywords=[]),\n'
+ '            body=[\n'
+ '                Assign(\n'
+ '                    targets=[\n'
+ "                        Name(id='EngineType', ctx=Store())],\n"
+ '                    value=BinOp(\n'
+ "                        left=Constant(value='V'),\n"
+ '                        op=Add(),\n'
+ '                        right=Call(\n'
+ "                            func=Name(id='str', ctx=Load()),\n"
+ '                            args=[\n'
+ '                                Call(\n'
+ '                                    func=Attribute(\n'
+ "                                        value=Name(id='random', "
+ 'ctx=Load()),\n'
+ "                                        attr='randint',\n"
+ '                                        ctx=Load()),\n'
+ '                                    args=[\n'
+ '                                        Constant(value=2),\n'
+ '                                        Constant(value=8)],\n'
+ '                                    keywords=[])],\n'
+ '                            keywords=[]))),\n'
+ '                Assign(\n'
+ '                    targets=[\n'
+ "                        Name(id='CarColor', ctx=Store())],\n"
+ "                    value=Constant(value='Red')),\n"
+ '                Assign(\n'
+ '                    targets=[\n'
+ "                        Name(id='ThisCar', ctx=Store())],\n"
+ '                    value=Call(\n'
+ "                        func=Name(id='Car', ctx=Load()),\n"
+ '                        args=[\n'
+ "                            Name(id='EngineType', ctx=Load()),\n"
+ "                            Name(id='CarColor', ctx=Load())],\n"
+ '                        keywords=[])),\n'
+ '                Expr(\n'
+ '                    value=Call(\n'
+ '                        func=Attribute(\n'
+ "                            value=Name(id='MyCars', ctx=Load()),\n"
+ "                            attr='append',\n"
+ '                            ctx=Load()),\n'
+ '                        args=[\n'
+ "                            Name(id='ThisCar', ctx=Load())],\n"
+ '                        keywords=[]))],\n'
+ '            orelse=[]),\n'
+ '        Assign(\n'
+ '            targets=[\n'
+ "                Name(id='odd_even', ctx=Store())],\n"
+ '            value=IfExp(\n'
+ '                test=BinOp(\n'
+ "                    left=Name(id='num_Cars', ctx=Load()),\n"
+ '                    op=Mod(),\n'
+ '                    right=Constant(value=2)),\n'
+ "                body=Constant(value='odd'),\n"
+ "                orelse=Constant(value='even'))),\n"
+ '        Expr(\n'
+ '            value=Call(\n'
+ "                func=Name(id='print', ctx=Load()),\n"
+ '                args=[\n'
+ '                    JoinedStr(\n'
+ '                        values=[\n'
+ "                            Constant(value='There are an '),\n"
+ '                            FormattedValue(\n'
+ "                                value=Name(id='odd_even', ctx=Load()),\n"
+ '                                conversion=-1),\n'
+ "                            Constant(value=' number of objects in the "
+ "list.')])],\n"
+ '                keywords=[]))],\n'
+ '    type_ignores=[])')

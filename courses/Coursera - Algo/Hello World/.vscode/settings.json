@@ -1,0 +1,5 @@
+{
+    "java.project.referencedLibraries": [
+        "hello/.lift/algs4.jar"
+    ]
+}
