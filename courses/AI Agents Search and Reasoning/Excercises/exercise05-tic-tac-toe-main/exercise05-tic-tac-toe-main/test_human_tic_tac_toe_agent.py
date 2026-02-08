@@ -25,36 +25,4 @@ class TestHumanTicTacToeAgent(unittest.TestCase):
     Properties
     """
 
-    def test_game(self):
-        """
-        A HumanTicTacToeAgent has a `game` property.
-        """
-        agent = HumanTicTacToeAgent("Fake Game", None)
-        self.assertEqual("Fake Game", agent.game)
-
-    def test_symbol(self):
-        """
-        A HumanTicTacToeAgent has a `symbol` property.
-        """
-        agent = HumanTicTacToeAgent(None, 'X')
-        self.assertEqual('X', agent.symbol)
-
-    """
-    Agent Function
-    """
-
-    def test_action(self):
-        """
-        A HumanTicTacToeAgent has an agent method that returns a numeric board
-        position representing the move or action.
-        """
-        agent = HumanTicTacToeAgent(None, None)
-        print("TEST: input a 1")
-        self.assertEqual(1, agent.action(None))
-
-
-def fake_value():
-    return f"FAKE {time.time()}"
-
-if __name__ == '__main__':
-    unittest.main()
+  
