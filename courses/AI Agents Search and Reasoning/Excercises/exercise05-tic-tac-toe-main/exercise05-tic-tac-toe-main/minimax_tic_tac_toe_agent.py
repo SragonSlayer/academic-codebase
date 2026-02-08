@@ -10,7 +10,7 @@ ai = 'ai'
 human = 'human'
 
 class MinimaxTicTacToeAgent:
-
+    
     def __init__(self, game, symbol):
         self.game = game
         self.symbol = symbol
@@ -61,30 +61,55 @@ class MinimaxTicTacToeAgent:
         
         if (player == ai):
             best_score = float('-inf')
-            for move in range(len(state)):
-                if state[move] == None:
-                    new_state = game.result(state, move)
-                    score = self.minimax(game, new_state, human)
-                    best_score = max(score, best_score)
-            return best_score
+            curr_score = self.max_value(game, state)
+            if curr_score > best_score:
+                best_score = curr_score
         else:
             best_score = float('inf')
-            for move in range(len(state)):
-                if state[move] == None:
-                    new_state = game.result(state, move)
-                    score = self.minimax(game, new_state, ai)
-                    best_score = min(score, best_score)
-        return best_score
+            curr_score = self.min_value(game, state)
+            if curr_score < best_score:
+                best_score = curr_score
+        return curr_score
         
 
     def max_value(self, game, state):
         """
         TODO: replace this with an appropriate docstring comment
+        I am assuming we need to use this to find the best move for the AI player
         """
-        pass
+        if (game.no_moves_left(state)):
+            if (game.is_win(state, self.symbol)):
+                return 1
+            elif (game.is_win(state, self.opponent_symbol)):
+                return -1
+            else:
+                return 0
+        
+        best_score = float('-inf')
+        for move in range(len(state)):
+            if state[move] == None:
+                new_state = game.result(state, move)
+                score = self.minimax(game, new_state, human)
+                best_score = max(score, best_score)
+        return best_score
 
     def min_value(self, game, state):
         """
         TODO: replace this with an appropriate docstring comment
+        I am assuming we need to use this to find the best move for the human player
         """
-        pass
+        if (game.no_moves_left(state)):
+            if (game.is_win(state, self.symbol)):
+                return 1
+            elif (game.is_win(state, self.opponent_symbol)):
+                return -1
+            else:
+                return 0
+            
+        best_score = float('inf')
+        for move in range(len(state)):
+            if state[move] == None:
+                new_state = game.result(state, move)
+                score = self.minimax(game, new_state, ai)
+                best_score = min(score, best_score)
+        return best_score
